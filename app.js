@@ -16,7 +16,7 @@ app.get("/api", async (req, res) => {
     const track = req.query.track;
     const current_day = daysOfWeek[currentDate?.getDay()];
     //   const utc_time = currentDate.toUTCString();
-    const utc_time = currentDate.toISOString();
+    const utc_time = currentDate.toISOString().slice(0, -5) + "Z";
     const github_file_url = process.env.GITHUB_FILE;
     const github_repo_url = process.env.GITHUB_REPO;
 
