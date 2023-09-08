@@ -8,10 +8,10 @@ const app = express();
 app.use(express.json());
 
 dotenv.config({ path: "./config.env" });
-const currentDate = new Date();
 
 app.get("/api", async (req, res) => {
   try {
+    const currentDate = new Date();
     const slack_name = req.query.slack_name;
     const track = req.query.track;
     const current_day = daysOfWeek[currentDate?.getDay()];
